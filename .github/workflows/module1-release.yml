@@ -26,8 +26,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run:  |
-      cd module1
-      mvn -B package --file pom.xml
+        cd module1
+        mvn -B package --file pom.xml
     - name: Configure Git user
       run: |
         git config user.email "pareeksumit101@gmail.com"
