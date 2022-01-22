@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.example</groupId>
 		<artifactId>parentmodule</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>${revision}</version>
 	</parent>
 	<groupId>com.module2.example</groupId>
 	<artifactId>module2</artifactId>
