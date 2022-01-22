@@ -10,6 +10,7 @@ public class Module1Application {
 
 		// yoyo yoyo
 		SpringApplication.run(Module1Application.class, args);
+		System.out.println("yoyo here");
 	}
 
 }
