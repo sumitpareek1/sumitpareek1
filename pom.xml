@@ -12,7 +12,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>parentmodule</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
     <!--    <properties>-->
     <!--        <maven.compiler.source>11</maven.compiler.source>-->
