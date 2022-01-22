@@ -28,7 +28,19 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	<scm>
+		<developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>
+	</scm>
+	<properties>
+		<project.scm.id>github</project.scm.id>
+	</properties>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub</name>
+			<url>https://github.com/sumitpareek1/sumitpareek1/tree/main/module1</url>
+		</repository>
+	</distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
