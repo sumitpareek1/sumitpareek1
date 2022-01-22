@@ -28,7 +28,7 @@
 		</dependency>
 	</dependencies>
 	<scm>
-		<developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>
+		<!--<developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>-->
 		<url>https://github.com/sumitpareek1/sumitpareek1/tree/main/module2</url>
 		<tag>HEAD</tag>
 	</scm>
