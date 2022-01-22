@@ -13,7 +13,7 @@
 	<description>Demo project Module2</description>
 	<properties>
 		<java.version>11</java.version>
-	</properties>
+		<project.scm.id>github</project.scm.id>	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
