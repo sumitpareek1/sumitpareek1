@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v2
     - name: Configure Git user
       run: |
         git config user.email "pareeksumit101@gmail.com"
