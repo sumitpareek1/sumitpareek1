@@ -25,7 +25,9 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v2
         with:
-          java-version: 14
+          java-version: 11
+          distribution: 'temurin'
+          cache: maven
           server-id: github
       - name: Configure Git user
         run: |
