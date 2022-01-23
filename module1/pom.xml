@@ -4,11 +4,11 @@
 	<parent>
 		<groupId>org.example</groupId>
 		<artifactId>parentmodule</artifactId>
-		<version>1.2-SNAPSHOT</version>
+		<version>1.2</version>
 	</parent>
 	<groupId>com.module1.example</groupId>
 	<artifactId>module1</artifactId>
-	<version>0.0.12-SNAPSHOT</version>
+	<version>0.0.12</version>
 	<packaging>jar</packaging>
 	<name>module1</name>
 	<description>Demo project Module1</description>
