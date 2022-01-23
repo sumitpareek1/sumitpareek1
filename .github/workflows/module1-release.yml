@@ -32,7 +32,6 @@ jobs:
           git config user.name "sumitpareek1"
       - name: Publish JAR
         run: |
-          cd module1
           mvn -B release:prepare release:perform
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
