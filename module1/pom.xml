@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.example</groupId>
 		<artifactId>parentmodule</artifactId>
-		<version>1.6-SNAPSHOT</version>
+		<version>${revision}</version>
 	</parent>
 	<groupId>com.module1.example</groupId>
 	<artifactId>module1</artifactId>
@@ -28,17 +28,19 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-<!--	<scm>
+	<scm>
+		<connection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</connection>
 		<developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
+		<url>https://github.com/sumitpareek1/sumitpareek1/module1</url>
+		<tag>HEAD</tag>
+	</scm>
 	<distributionManagement>
 		<repository>
 			<id>github</id>
 			<name>GitHub</name>
-			<url>https://github.com/sumitpareek1/sumitpareek1</url>
+			<url>https://github.com/sumitpareek1/sumitpareek1/module1</url>
 		</repository>
-	</distributionManagement>-->
+	</distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
