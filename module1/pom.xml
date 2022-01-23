@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>com.module1.example</groupId>
 	<artifactId>module1</artifactId>
-	<version>0.0.6</version>
+	<version>0.0.7-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>module1</name>
 	<description>Demo project Module1</description>
@@ -30,7 +30,7 @@
 	</dependencies>
 	<scm>
 		<developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>
-	  <tag>module1-0.0.6</tag>
+	  <tag>HEAD</tag>
   </scm>
 	<distributionManagement>
 		<repository>
