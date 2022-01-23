@@ -36,6 +36,6 @@ jobs:
       - name: Publish JAR
         run: |
           cd module1
-          mvn -B release:prepare release:perform
+          mvn -B - force release:prepare release:perform
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
