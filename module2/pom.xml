@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>com.module2.example</groupId>
 	<artifactId>module2</artifactId>
-	<version>0.0.13-SNAPSHOT</version>
+	<version>0.0.13</version>
 	<name>module2</name>
 	<description>Demo project Module2</description>
 	<properties>
@@ -30,7 +30,7 @@
 		<connection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</connection>
 		<developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>
 		<!--<url>https://github.com/sumitpareek1/sumitpareek1/module2</url>-->
-		<tag>HEAD</tag>
+		<tag>module2-0.0.13</tag>
 	</scm>
 	<distributionManagement>
 		<repository>
