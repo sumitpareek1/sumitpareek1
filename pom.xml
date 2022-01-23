@@ -26,4 +26,16 @@
         <module>module1</module>
         <module>module2</module>
     </modules>
+
+    <scm>
+        <developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub</name>
+            <url>https://github.com/sumitpareek1/sumitpareek1</url>
+        </repository>
+    </distributionManagement>
 </project>
