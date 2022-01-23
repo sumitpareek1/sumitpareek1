@@ -26,9 +26,9 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<scm>
+	<!--<scm>
 		<developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>
-		<!--<url>https://github.com/sumitpareek1/sumitpareek1/tree/main/module2</url>-->
+		&lt;!&ndash;<url>https://github.com/sumitpareek1/sumitpareek1/tree/main/module2</url>&ndash;&gt;
 		<tag>HEAD</tag>
 	</scm>
 	<distributionManagement>
@@ -37,7 +37,7 @@
 			<name>GitHub</name>
 			<url>https://github.com/sumitpareek1/sumitpareek1/tree/main/module2</url>
 		</repository>
-	</distributionManagement>
+	</distributionManagement>-->
 	<build>
 		<plugins>
 			<plugin>

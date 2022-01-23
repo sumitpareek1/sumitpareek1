@@ -1,13 +1,11 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Release module 2
+name: Java CI with Maven
 
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'module2/**'
   pull_request:
     branches: [ main ]
 
@@ -25,16 +23,14 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run:  |
-        cd module2
-        mvn -B package --file pom.xml
+      run: mvn -B package --file pom.xml
     - name: Configure Git user
       run: |
         git config user.email "pareeksumit101@gmail.com"
         git config user.name "sumitpareek1"
     - name: Publish JAR
       run: |
-        cd module2
         mvn -B release:prepare release:perform
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

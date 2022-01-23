@@ -28,7 +28,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<scm>
+<!--	<scm>
 		<developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>
 	  <tag>HEAD</tag>
   </scm>
@@ -38,7 +38,7 @@
 			<name>GitHub</name>
 			<url>https://github.com/sumitpareek1/sumitpareek1</url>
 		</repository>
-	</distributionManagement>
+	</distributionManagement>-->
 	<build>
 		<plugins>
 			<plugin>
