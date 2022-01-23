@@ -20,6 +20,7 @@ jobs:
       - env:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
         run: |
+          git diff --quiet HEAD -- module1 || echo changed------
           echo $EVENT_CONTEXT
       - uses: actions/checkout@v2
       - name: Set up JDK 11
