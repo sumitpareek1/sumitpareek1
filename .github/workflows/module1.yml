@@ -8,6 +8,11 @@ on:
     branches: [ main ]
     paths:
       - 'module1/**'
+      env:
+        module1: 'present'
+      - 'module2/**'
+      env:
+        module2: 'present'
   pull_request:
     branches: [ main ]
 
@@ -33,9 +38,17 @@ jobs:
         run: |
           git config user.email "pareeksumit101@gmail.com"
           git config user.name "sumitpareek1"
-      - name: Publish JAR
+      - name: Publish JAR module 1
+        if: module1 == 'present'
         run: |
+          if: module1 == 'present'
           cd module1
-          mvn -B - f release:prepare release:perform
+          mvn -B release:prepare release:perform
+      - name: Publish JAR module 2
+        if: module2 == 'present'
+        run: |
+          if: module2 == 'present'
+          cd module2
+          mvn -B release:prepare release:perform
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
