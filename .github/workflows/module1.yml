@@ -18,11 +18,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - env:
-          EVENT_CONTEXT: ${{ toJSON(github.event) }}
-        run: |
-          git diff --quiet HEAD -- module1 || echo changed------
-          echo $EVENT_CONTEXT
       - uses: actions/checkout@v2
       - name: Set up JDK 11
         uses: actions/setup-java@v2
@@ -30,12 +25,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-      - name: Configure Git user
-        run: |
-          git config user.email "pareeksumit101@gmail.com"
-          git config user.name "sumitpareek1"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: dorny/paths-filter@v2
         id: changes1
         with:
@@ -45,10 +34,18 @@ jobs:
         # run only if some file in 'src' folder was changed
       - if: steps.changes1.outputs.src == 'true'
         run: |
-          git pull
+          git config user.email "pareeksumit101@gmail.com"
+          git config user.name "sumitpareek1"
           cd module1
           mvn -B package --file pom.xml
           mvn -B release:prepare release:perform
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+      - uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
       - uses: dorny/paths-filter@v2
         id: changes2
         with:
@@ -59,7 +56,10 @@ jobs:
         # run only if some file in 'src' folder was changed
       - if: steps.changes2.outputs.src == 'true'
         run: |
-          git pull
+          git config user.email "pareeksumit101@gmail.com"
+          git config user.name "sumitpareek1"
           cd module2
           mvn -B package --file pom.xml
           mvn -B release:prepare release:perform
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
