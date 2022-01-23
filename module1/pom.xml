@@ -36,7 +36,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub</name>
-			<url>https://github.com/sumitpareek1/sumitpareek1/tree/main/module1</url>
+			<url>https://github.com/sumitpareek1/sumitpareek1</url>
 		</repository>
 	</distributionManagement>
 	<build>
