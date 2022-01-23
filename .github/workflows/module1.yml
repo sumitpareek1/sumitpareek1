@@ -60,6 +60,7 @@ jobs:
         run: |
           git config user.email "pareeksumit101@gmail.com"
           git config user.name "sumitpareek1"
+          git pull
           cd module2
           mvn -B package --file pom.xml
           mvn -B release:prepare release:perform
