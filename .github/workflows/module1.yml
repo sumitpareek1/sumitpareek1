@@ -34,11 +34,13 @@ jobs:
         # run only if some file in 'src' folder was changed
       - if: steps.changes1.outputs.src == 'true'
         run: |
-          git config user.email "pareeksumit101@gmail.com"
-          git config user.name "sumitpareek1"
+          git config user.email 'pareeksumit101@gmail.com'
+          git config user.name 'sumitpareek1'
           cd module1
           mvn -B package --file pom.xml
           mvn -B release:prepare release:perform
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2
       - name: Set up JDK 11
         uses: actions/setup-java@v2
