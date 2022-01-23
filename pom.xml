@@ -13,7 +13,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>parentmodule</artifactId>
-    <version>1.1</version>
+    <version>1.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <!--    <properties>-->
     <!--        <maven.compiler.source>11</maven.compiler.source>-->
@@ -27,7 +27,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>
-        <tag>parentmodule-1.1</tag>
+        <tag>HEAD</tag>
     </scm>
     <distributionManagement>
         <repository>
