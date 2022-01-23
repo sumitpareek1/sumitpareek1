@@ -11,8 +11,6 @@ public class Module1Application {
 		// yoyo yoyo
 
 
-
-
 		SpringApplication.run(Module1Application.class, args);
 		//yes
 
