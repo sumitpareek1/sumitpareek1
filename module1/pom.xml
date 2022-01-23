@@ -4,11 +4,11 @@
 	<parent>
 		<groupId>org.example</groupId>
 		<artifactId>parentmodule</artifactId>
-		<version>${revision}</version>
+		<version>1.0</version>
 	</parent>
 	<groupId>com.module1.example</groupId>
 	<artifactId>module1</artifactId>
-	<version>0.0.10-SNAPSHOT</version>
+	<version>0.0.10</version>
 	<packaging>jar</packaging>
 	<name>module1</name>
 	<description>Demo project Module1</description>
@@ -30,7 +30,7 @@
 	</dependencies>
 	<scm>
 		<developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>
-	  <tag>HEAD</tag>
+	  <tag>parentmodule-1.0</tag>
   </scm>
 	<distributionManagement>
 		<repository>
