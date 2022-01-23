@@ -26,7 +26,9 @@
     </modules>
 
     <scm>
+        <connection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</connection>
         <developerConnection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</developerConnection>
+        <url>https://github.com/sumitpareek1/sumitpareek1</url>
         <tag>HEAD</tag>
     </scm>
     <distributionManagement>
