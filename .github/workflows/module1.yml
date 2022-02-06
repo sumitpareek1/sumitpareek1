@@ -68,9 +68,11 @@ jobs:
           git config user.email "pareeksumit101@gmail.com"
           git config user.name "sumitpareek1"
           git pull
-          mvn -B package --file module2/pom.xml
-          mvn -B --file module2/pom.xml release:prepare
+          ./mvnw -B package --file module2/pom.xml
+          ./mvnw -B --file module2/pom.xml release:prepare
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: new step
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        run: |
+          GITHUB_REF=refs/heads/feature-branch-1
+          echo ${GITHUB_REF##*/}
