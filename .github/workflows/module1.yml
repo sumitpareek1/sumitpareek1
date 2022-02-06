@@ -72,3 +72,6 @@ jobs:
           mvn -B --file module2/pom.xml release:prepare
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: new step
+        run: |
+          echo running on branch ${GITHUB_REF##*/}
