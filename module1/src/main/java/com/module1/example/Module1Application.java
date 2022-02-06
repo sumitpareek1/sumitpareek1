@@ -16,5 +16,7 @@ public class Module1Application {
     System.out.println("111229992ldsf;sdkf;l111");
     System.out.println("111229992ldsf;sdkf;l111");
     System.out.println("111229992ldsf;sdkf;l111");
+    System.out.println("111229992ldsf;sdkf;l111");
+    System.out.println("111229992ldsf;sdkf;l111");
   }
 }
