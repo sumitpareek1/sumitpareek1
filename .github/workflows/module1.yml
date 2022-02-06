@@ -62,7 +62,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # run only if some file in 'src' folder was changed of module 2
-      - name: If change is in module1 create release tag
+      - name: If change is in module2 create release tag
         if: steps.changes2.outputs.src == 'true'
         run: |
           git config user.email "pareeksumit101@gmail.com"
@@ -72,3 +72,5 @@ jobs:
           mvn -B --file module2/pom.xml release:prepare
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: new step
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
