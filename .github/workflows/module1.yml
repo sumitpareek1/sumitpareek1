@@ -55,7 +55,7 @@ jobs:
       - if: steps.module1.outputs.src == 'true'
         name: If change is in module1 create release tag
         run: |
-          echo steps.module1.outputs.src
+          echo ${steps.module1.outputs.src}
           git config user.email 'pareeksumit101@gmail.com'
           git config user.name 'sumitpareek1'
           ./mvnw -B package --file module1/pom.xml
