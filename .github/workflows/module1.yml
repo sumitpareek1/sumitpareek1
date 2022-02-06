@@ -34,7 +34,7 @@ jobs:
         # Check code formatting
       - name: Check java code formatting
         run: |
-          - /.mvnw com.coveo:fmt-maven-plugin:check
+          ./mvnw com.coveo:fmt-maven-plugin:check
         # Check if change is there in module1
       - name: Check if change is in module1
         uses: dorny/paths-filter@v2
