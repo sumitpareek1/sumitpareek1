@@ -19,7 +19,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-        # Checkout and setup
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+      # Checkout and setup
       - uses: actions/checkout@v2
       - name: Set up JDK 11
         uses: actions/setup-java@v2
@@ -37,6 +41,7 @@ jobs:
           ./mvnw com.coveo:fmt-maven-plugin:check
         # Check if change is there in module1
       - name: Check if change is in module1
+        if: github.ref == 'refs/heads/main'
         uses: dorny/paths-filter@v2
         id: module1
         with:
@@ -45,6 +50,7 @@ jobs:
               - 'module1/**'
         # Check if change is there in module2
       - name: Check if change is in module2
+        if: github.ref == 'refs/heads/main'
         uses: dorny/paths-filter@v2
         id: module2
         with:
@@ -53,7 +59,7 @@ jobs:
               - 'module2/**'
         # run only if some file in 'src' folder was changed of module 1
       - name: If change is in module1 create release tag
-        if: steps.module1.outputs.src == 'true'
+        if: steps.module1.outputs.src == 'true' &&  github.ref == 'refs/heads/main'
         run: |
           git config user.email 'pareeksumit101@gmail.com'
           git config user.name 'sumitpareek1'
@@ -63,7 +69,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # run only if some file in 'src' folder was changed of module 2
       - name: If change is in module2 create release tag
-        if: steps.changes2.outputs.src == 'true'
+        if: steps.changes2.outputs.src == 'true' && github.ref == 'refs/heads/main'
         run: |
           git config user.email "pareeksumit101@gmail.com"
           git config user.name "sumitpareek1"
