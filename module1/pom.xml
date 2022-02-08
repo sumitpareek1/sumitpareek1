@@ -8,13 +8,14 @@
 	</parent>
 	<groupId>com.module1.example</groupId>
 	<artifactId>module1</artifactId>
-	<version>0.0.45-SNAPSHOT</version>
+	<version>${module1.version}</version>
 	<packaging>jar</packaging>
 	<name>module1</name>
 	<description>Demo project Module1</description>
 	<properties>
 		<java.version>11</java.version>
 		<project.scm.id>github</project.scm.id>
+		<module1.version>0.0.45-SNAPSHOT</module1.version>
 	</properties>
 	<dependencies>
 		<dependency>
