@@ -25,6 +25,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.module1.example</groupId>
+			<artifactId>module1</artifactId>
+			<version>0.0.46-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<scm>
 		<connection>scm:git:https://github.com/sumitpareek1/sumitpareek1.git</connection>

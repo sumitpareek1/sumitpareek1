@@ -15,7 +15,6 @@
 	<properties>
 		<java.version>11</java.version>
 		<project.scm.id>github</project.scm.id>
-		<module1.version>0.0.45-SNAPSHOT</module1.version>
 	</properties>
 	<dependencies>
 		<dependency>
