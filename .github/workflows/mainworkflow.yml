@@ -14,15 +14,16 @@ on:
       - 'feature/**'
 
 jobs:
+
+  call-workflow-checkout:
+    uses: sumitpareek1/sumitpareek1/.github/workflows/checkoutworkflow.yml@v1
+
   build:
 
     runs-on: ubuntu-latest
 
     steps:
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
+
       # Checkout and setup
       - uses: actions/checkout@v2
       - name: Set up JDK 11
