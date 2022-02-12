@@ -15,15 +15,12 @@ on:
 
 jobs:
 
-  call-workflow-checkout:
-    uses: ./.github/workflows/checkoutworkflow.yml
-
   mainworkflow:
 
     runs-on: ubuntu-latest
 
     steps:
-
+      - uses: ./.github/workflows/checkoutworkflow.yml
         # Grant permission to mvnw
       - name: Grant permission for mvnw
         run:
