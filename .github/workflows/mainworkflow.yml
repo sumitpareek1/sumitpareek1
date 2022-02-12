@@ -16,7 +16,7 @@ on:
 jobs:
 
   call-workflow-checkout:
-    uses: sumitpareek1/sumitpareek1/.github/workflows/checkoutworkflow.yml@v1
+    uses: sumitpareek1/sumitpareek1/.github/workflows/checkoutworkflow.yml
 
   build:
 
