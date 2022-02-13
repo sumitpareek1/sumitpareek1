@@ -19,10 +19,45 @@ on:
         type: environment
         required: true
 
-jobs:
-  print-tag:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Print the input tag to STDOUT
-        run: echo  The tag is ${{ github.event.inputs.tag }}
+  # Check if change is there in module1
+      - name: Check if change is in module1
+        if: github.ref == 'refs/heads/main'
+        uses: dorny/paths-filter@v2
+        id: module1
+        with:
+          filters: |
+            src:
+              - 'module1/**'
+        # Check if change is there in module2
+      - name: Check if change is in module2
+        if: github.ref == 'refs/heads/main'
+        uses: dorny/paths-filter@v2
+        id: module2
+        with:
+          filters: |
+            src:
+              - 'module2/**'
+        # run only if some file in 'src' folder was changed of module 1
+      - name: If change is in module1 create release tag
+        if: steps.module1.outputs.src == 'true' &&  github.ref == 'refs/heads/main'
+        run: |
+          git config user.email 'pareeksumit101@gmail.com'
+          git config user.name 'sumitpareek1'
+          ./mvnw -B package --file module1/pom.xml
+          ./mvnw -B --file module1/pom.xml release:prepare
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # run only if some file in 'src' folder was changed of module 2
+      - name: If change is in module2 create release tag
+        if: steps.module2.outputs.src == 'true' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.email "pareeksumit101@gmail.com"
+          git config user.name "sumitpareek1"
+          git pull
+          ./mvnw -B package --file module2/pom.xml
+          ./mvnw -B --file module2/pom.xml release:prepare
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: new step
+        run: |
+          echo running on branch ${GITHUB_REF##*/}
