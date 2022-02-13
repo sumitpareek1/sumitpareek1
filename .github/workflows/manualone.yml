@@ -1,3 +1,6 @@
+
+name: Manual Workflow exx
+
 on:
   workflow_dispatch:
     inputs:
@@ -7,9 +10,9 @@ on:
         default: 'warning'
         type: choice
         options:
-        - info
-        - warning
-        - debug
+          - info
+          - warning
+          - debug
       tags:
         description: 'Test scenario tags'
         required: false
@@ -18,8 +21,14 @@ on:
         description: 'Environment to run tests against'
         type: environment
         required: true
+jobs:
 
-  # Check if change is there in module1
+  mainworkflow:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check if change is there in module1
       - name: Check if change is in module1
         if: github.ref == 'refs/heads/main'
         uses: dorny/paths-filter@v2
