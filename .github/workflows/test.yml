@@ -16,7 +16,7 @@ on:
       - yoyo
 
 env:
-  namess: false
+  namess: 'false'
 
 jobs:
   setupjob:
