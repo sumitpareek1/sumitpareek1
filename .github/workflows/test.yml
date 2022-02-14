@@ -40,6 +40,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - if: steps.module1.outputs.src == 'true'
-        uses: ./github/workflows/test1.yml
+        uses: ./.github/workflows/test1.yml
         with:
           namess: sumit
