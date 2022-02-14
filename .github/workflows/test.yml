@@ -22,7 +22,7 @@ jobs:
   setupjob:
     runs-on: ubuntu-latest
     outputs:
-      namess: :${steps.module1.outputs.src}
+      namess: :${{steps.module1.outputs.src}}
     steps:
       # Checkout and setup
       - uses: actions/checkout@v2
@@ -40,4 +40,4 @@ jobs:
     if: ${{needs.setupjob.outputs.src}} == 'true'
     uses: sumitpareek1/sumitpareek1/.github/workflows/test1.yml@yoyo
     with:
-        namess: ${{needs.setupjob.outputs.src}}
+        opps: ${{needs.setupjob.outputs.src}}

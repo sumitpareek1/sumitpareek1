@@ -6,7 +6,7 @@ name: Process
 on:
   workflow_call:
    inputs:
-     namess:
+     opps:
        default: 'no name'
        type: string
        required: false
@@ -33,6 +33,6 @@ jobs:
       - name: If change is in module1 create release tag
         if: steps.module1.outputs.src == 'true'
         run: |
-          echo i am here da my name is ${{ inputs.namess }}
+          echo i am here da my name is ${{ inputs.opps }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
