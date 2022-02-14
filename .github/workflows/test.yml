@@ -13,6 +13,8 @@ on:
       - main
       - 'feature/**'
 
+env:
+  val: false
 jobs:
   setupjob:
     runs-on: ubuntu-latest
@@ -30,7 +32,8 @@ jobs:
             src:
               - 'module1/**'
   call-test1:
-      if: steps.module1.outputs.src == 'true'
-      uses: sumitpareek1/sumitpareek1/.github/workflows/test1.yml@main
-      with:
-          namess: sumit
+    needs: setupjob
+    if: steps.module1.outputs.src == 'true'
+    uses: sumitpareek1/sumitpareek1/.github/workflows/test1.yml@main
+    with:
+        namess: sumit
