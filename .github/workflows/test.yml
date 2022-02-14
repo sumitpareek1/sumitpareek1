@@ -38,4 +38,4 @@ jobs:
     if: ${{needs.setupjob.outputs.src}} == 'true'
     uses: sumitpareek1/sumitpareek1/.github/workflows/test1.yml@main
     with:
-        namess: sumit
+        namess: ${{needs.setupjob.outputs.src}}
