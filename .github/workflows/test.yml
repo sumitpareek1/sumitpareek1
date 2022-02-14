@@ -15,6 +15,9 @@ on:
       - 'feature/**'
       - yoyo
 
+env:
+  namess: false
+
 jobs:
   setupjob:
     runs-on: ubuntu-latest
