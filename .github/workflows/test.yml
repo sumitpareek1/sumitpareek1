@@ -26,7 +26,7 @@ jobs:
     steps:
       # Checkout and setup
       - uses: actions/checkout@v2
-        # Grant permission to mvnw
+        # Grant permission tgo mvnw
       - name: Check if change is in module1
         uses: dorny/paths-filter@v2
         id: module1
