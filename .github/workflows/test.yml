@@ -32,16 +32,16 @@ jobs:
             src:
               - 'module1/**'
 
-  setupjob1:
-    runs-on: ubuntu-latest
-    needs: setupjob
-    steps:
-      - run: echo hi there ${{ needs.setupjob.outputs.namess}}
+#  setupjob1:
+#    runs-on: ubuntu-latest
+#    needs: setupjob
+#    steps:
+#      - run: echo hi there ${{ needs.setupjob.outputs.namess}}
 
 
   call-test1:
     needs: setupjob
-#    if: ${{ needs.setupjob.outputs.namess}} == 'true'
+    if: ${{ needs.setupjob.outputs.namess}} == 'true'
     uses: sumitpareek1/sumitpareek1/.github/workflows/test1.yml@yoyo
     with:
         opps: ${{ needs.setupjob.outputs.namess }}
