@@ -14,7 +14,7 @@ on:
 jobs:
 
   mainworkflow:
-
+    if: ${{ inputs.opps }} == 'false'
     runs-on: ubuntu-latest
 
     steps:

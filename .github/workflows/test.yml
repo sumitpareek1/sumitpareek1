@@ -40,7 +40,7 @@ jobs:
 
 
   call-test1:
-    if: ${{ needs.setupjob.outputs.namess}} == 'false'
+#    if: ${{ needs.setupjob.outputs.namess}} == 'false'
     needs: setupjob
     uses: sumitpareek1/sumitpareek1/.github/workflows/test1.yml@yoyo
     with:
