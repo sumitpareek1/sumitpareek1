@@ -21,6 +21,6 @@ jobs:
       - name: If change is in module1 create release tag
         if: ${{user}} == 'true'
         run: |
-          echo i am here da
+          echo i am here da my name is${{namess}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
