@@ -1,0 +1,49 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Release module 1
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+  pull_request:
+    branches:
+      - main
+      - 'feature/**'
+
+jobs:
+
+  mainworkflow:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout and setup
+      - uses: actions/checkout@v2
+        # Grant permission to mvnw
+      - name: Check if change is in module1
+        if: github.ref == 'refs/heads/main'
+        uses: dorny/paths-filter@v2
+        id: module1
+        with:
+          filters: |
+            src:
+              - 'module1/**'
+        # Check if change is there in module2
+      - name: Check if change is in module2
+        if: github.ref == 'refs/heads/main'
+        uses: dorny/paths-filter@v2
+        id: module2
+        with:
+          filters: |
+            src:
+              - 'module2/**'
+        # run only if some file in 'src' folder was changed of module 1
+      - name: If change is in module1 create release tag
+        if: steps.module1.outputs.src == 'true'
+        run: |
+          echo i am here
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
