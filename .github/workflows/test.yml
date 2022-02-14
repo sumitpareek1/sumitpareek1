@@ -20,8 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout and setup
-      - uses: actions/checkout@v2
+
         # Grant permission to mvnw
       - name: Check if change is in module1
         if: github.ref == 'refs/heads/main'
