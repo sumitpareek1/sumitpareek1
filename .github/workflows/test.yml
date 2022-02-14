@@ -13,8 +13,7 @@ on:
       - main
       - 'feature/**'
 
-env:
-  val: false
+
 jobs:
   setupjob:
     runs-on: ubuntu-latest
@@ -24,7 +23,6 @@ jobs:
       - uses: actions/checkout@v2
         # Grant permission to mvnw
       - name: Check if change is in module1
-        if: github.ref == 'refs/heads/main'
         uses: dorny/paths-filter@v2
         id: module1
         with:
