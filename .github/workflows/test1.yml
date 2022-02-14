@@ -7,7 +7,7 @@ on:
   workflow_call:
    inputs:
      namess:
-       type: string
+       type: boolean
        required: true
 
 jobs:
