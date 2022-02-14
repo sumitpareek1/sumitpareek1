@@ -42,8 +42,8 @@ jobs:
 
 
   call-test1:
-    needs: setupjob
     if: ${{needs.setupjob.outputs.src}} == 'true'
+    needs: setupjob
     uses: sumitpareek1/sumitpareek1/.github/workflows/test1.yml@yoyo
     with:
         opps: ${{needs.setupjob.outputs.src}}
