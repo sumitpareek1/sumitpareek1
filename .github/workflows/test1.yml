@@ -1,17 +1,14 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: test
+name: Process
 
 on:
-  push:
-    branches:
-      - main
-      - 'feature/**'
-  pull_request:
-    branches:
-      - main
-      - 'feature/**'
+  workflow_call:
+   inputs:
+     namess:
+       type: string
+       required: true
 
 jobs:
 
@@ -35,11 +32,6 @@ jobs:
       - name: If change is in module1 create release tag
         if: steps.module1.outputs.src == 'true'
         run: |
-          echo i am here
+          echo i am here da
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - if: steps.module1.outputs.src == 'true'
-        uses: ./github/workflows/test1.yml
-        with:
-          namess: sumit
