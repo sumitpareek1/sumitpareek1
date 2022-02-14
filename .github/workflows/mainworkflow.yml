@@ -71,7 +71,7 @@ jobs:
           git config user.email "pareeksumit101@gmail.com"
           git config user.name "sumitpareek1"
           git pull
-          ./mvnw -B package --file module2/pom.xml
+          ./mvnw -B package --file module2/pom.xml -Dtag=hey
           ./mvnw -B --file module2/pom.xml release:prepare
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
