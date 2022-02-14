@@ -14,9 +14,7 @@ on:
       - 'feature/**'
 
 jobs:
-
-  mainworkflow:
-
+  setupjob:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,15 +29,8 @@ jobs:
           filters: |
             src:
               - 'module1/**'
-        # run only if some file in 'src' folder was changed of module 1
-      - name: If change is in module1 create release tag
-        if: steps.module1.outputs.src == 'true'
-        run: |
-          echo i am here
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - if: steps.module1.outputs.src == 'true'
-        uses: sumitpareek1/sumitpareek1/.github/workflows/test1.yml@main
-        with:
+  call-test1:
+      if: steps.module1.outputs.src == 'true'
+      uses: sumitpareek1/sumitpareek1/.github/workflows/test1.yml@main
+      with:
           namess: sumit
