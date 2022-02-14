@@ -31,15 +31,6 @@ jobs:
           filters: |
             src:
               - 'module1/**'
-        # Check if change is there in module2
-      - name: Check if change is in module2
-        if: github.ref == 'refs/heads/main'
-        uses: dorny/paths-filter@v2
-        id: module2
-        with:
-          filters: |
-            src:
-              - 'module2/**'
         # run only if some file in 'src' folder was changed of module 1
       - name: If change is in module1 create release tag
         if: steps.module1.outputs.src == 'true'
