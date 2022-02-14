@@ -6,7 +6,7 @@ name: test1
 on:
   workflow_call:
    inputs:
-     namess:
+     user:
        type: boolean
        required: true
 
@@ -19,7 +19,7 @@ jobs:
     steps:
         # run only if some file in 'src' folder was changed of module 1
       - name: If change is in module1 create release tag
-        if: namess == 'true'
+        if: user == 'true'
         run: |
           echo i am here da
         env:
