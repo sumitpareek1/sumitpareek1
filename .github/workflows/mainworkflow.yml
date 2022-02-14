@@ -60,7 +60,9 @@ jobs:
         run: |
           git config user.email 'pareeksumit101@gmail.com'
           git config user.name 'sumitpareek1'
-          ./mvnw -B package --file module1/pom.xml -Dtag=hey
+          RELEASE_VERSION=$(git tag --list --sort=-committerdate "module1-*" | head -n 1)
+          echo "RELEASE_VERSION=${RELEASE_VERSION}" >> $GITHUB_ENV
+          ./mvnw -B package --file module1/pom.xml
           ./mvnw -B --file module1/pom.xml release:prepare
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
