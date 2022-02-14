@@ -1,5 +1,5 @@
 
-name: Manual Workflow exx
+name: Manual Workflow
 
 on:
   workflow_dispatch:
