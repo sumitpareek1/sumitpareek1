@@ -13,11 +13,14 @@ on:
       - main
       - 'feature/**'
 
+env:
+  namess: false
 
 jobs:
   setupjob:
     runs-on: ubuntu-latest
-
+    outputs:
+      namess: :${steps.module1.outputs.src}
     steps:
       # Checkout and setup
       - uses: actions/checkout@v2
@@ -29,9 +32,10 @@ jobs:
           filters: |
             src:
               - 'module1/**'
+
   call-test1:
     needs: setupjob
-    if: steps.module1.outputs.src == 'true'
+    if: ${needs.setupjob.outputs.src} == 'true'
     uses: sumitpareek1/sumitpareek1/.github/workflows/test1.yml@main
     with:
         namess: sumit
