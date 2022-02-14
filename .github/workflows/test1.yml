@@ -19,8 +19,8 @@ jobs:
 
     steps:
         # run only if some file in 'src' folder was changed of module 1
-      - run:
-          echo my name is ${{ inputs.opps }}
+#      - run:
+#          echo my name is ${{ inputs.opps }}
       - name: If change is in module1 create release tag
         if: ${{ inputs.opps }} == 'true'
         run: |
